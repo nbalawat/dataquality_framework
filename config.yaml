@@ -1,0 +1,81 @@
+tables:
+  - dataset: test_dataset
+    table: transactions
+    checks:
+      null_checks:
+        - column: 'user_id'
+          threshold: 0
+          filter: 'status = "completed"'
+      uniqueness_checks:
+        - columns: ['transaction_id']
+          threshold: 0
+      conditional_checks:
+        - condition: 'amount > 0'
+          description: 'Transaction amount should be positive'
+          threshold: 0
+          filter: 'currency = "USD"'
+    trend_analysis:
+      row_count_anomaly_threshold: 0.05
+      group_anomaly_detection:
+        historical_data_points: 7
+        minimum_data_points: 5
+        groups:
+          - columns: ['region']
+            anomaly_threshold: 0.1
+            filter: 'transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)'
+  - dataset: test_dataset
+    table: users
+    checks:
+      null_checks:
+        - column: 'email'
+          threshold: 0
+      uniqueness_checks:
+        - columns: ['email']
+          threshold: 0
+          filter: 'status = "active"'
+      conditional_checks:
+        - condition: 'LENGTH(email) <= 20'
+          description: 'Email length should be <= 20 characters'
+          threshold: 0
+    trend_analysis:
+      row_count_anomaly_threshold: 0.05
+  - dataset: test_dataset
+    table: sales
+    checks:
+      # No specific checks, focusing on anomaly detection
+    trend_analysis:
+      row_count_anomaly_threshold: 0.1
+      group_anomaly_detection:
+        historical_data_points: 14
+        minimum_data_points: 10
+        groups:
+          - columns: ['region']
+            anomaly_threshold: 0.2
+            filter: 'sale_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)'
+          - columns: ['sale_date']
+            anomaly_threshold: 0.15
+            filter: 'region = "East"'
+  - dataset: test_dataset
+    table: empty_table
+    checks:
+      null_checks:
+        - column: 'column1'
+          threshold: 0
+    trend_analysis:
+      row_count_anomaly_threshold: 0.05
+  - dataset: test_dataset
+    table: all_nulls
+    checks:
+      null_checks:
+        - column: 'column1'
+          threshold: 0
+    trend_analysis:
+      row_count_anomaly_threshold: 0.05
+  - dataset: test_dataset
+    table: all_duplicates
+    checks:
+      uniqueness_checks:
+        - columns: ['column1']
+          threshold: 0
+    trend_analysis:
+      row_count_anomaly_threshold: 0.05

@@ -1,0 +1,21 @@
+CREATE TABLE `your_project.your_dataset.data_quality_results` (
+  run_id STRING NOT NULL,
+  dataset STRING NOT NULL,
+  table STRING NOT NULL,
+  check_type STRING NOT NULL,
+  check_name STRING NOT NULL,
+  columns STRING,
+  condition STRING,
+  group_by_columns STRING,
+  group_values STRING,
+  threshold FLOAT64,
+  metric_name STRING NOT NULL,
+  metric_value FLOAT64,
+  expected_value FLOAT64,
+  total_rows INT64,
+  status STRING NOT NULL,
+  filter_condition STRING,
+  generated_sql STRING,
+  error_message STRING,
+  timestamp TIMESTAMP NOT NULL
+);
