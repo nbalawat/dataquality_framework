@@ -1,3 +1,4 @@
+import argparse
 import logging
 from datetime import datetime
 
@@ -20,39 +21,49 @@ from data_quality_checks import (
 )
 
 def main():
+    parser = argparse.ArgumentParser(description='Data Quality Validation Script')
+    parser.add_argument('--config', type=str, default='config.yaml', help='Path to configuration file')
+    parser.add_argument('--checks', type=str, default='all', help='Checks to run (all, null_checks, uniqueness_checks, conditional_checks, anomaly_detection)')
+    args = parser.parse_args()
+
     run_id = f"run_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}"
     start_time = datetime.utcnow()
     logging.info(f"Data quality validation started with run ID: {run_id}")
     try:
         # Load configuration
-        config = load_config('config.yaml')
+        config = load_config(args.config)
 
         # Parse checks
-        null_checks = parse_null_checks(config)
-        uniqueness_checks = parse_uniqueness_checks(config)
-        conditional_checks = parse_conditional_checks(config)
-        group_configs = parse_group_anomaly_detection(config)
+        null_checks = parse_null_checks(config) if args.checks in ['all', 'null_checks'] else []
+        uniqueness_checks = parse_uniqueness_checks(config) if args.checks in ['all', 'uniqueness_checks'] else []
+        conditional_checks = parse_conditional_checks(config) if args.checks in ['all', 'conditional_checks'] else []
+        group_configs = parse_group_anomaly_detection(config) if args.checks in ['all', 'anomaly_detection'] else []
 
         results = []
 
         # Execute null checks
-        results.extend(execute_null_checks(null_checks, run_id))
+        if null_checks:
+            results.extend(execute_null_checks(null_checks, run_id))
 
         # Execute uniqueness checks
-        results.extend(execute_uniqueness_checks(uniqueness_checks, run_id))
+        if uniqueness_checks:
+            results.extend(execute_uniqueness_checks(uniqueness_checks, run_id))
 
         # Execute conditional checks
-        results.extend(execute_conditional_checks(conditional_checks, run_id))
+        if conditional_checks:
+            results.extend(execute_conditional_checks(conditional_checks, run_id))
 
         # Collect and store current counts for anomaly detection
-        collect_and_store_current_counts(group_configs, run_id)
+        if group_configs:
+            collect_and_store_current_counts(group_configs, run_id)
 
-        # Analyze group anomalies
-        for group_config in group_configs:
-            results.extend(analyze_group_anomalies(group_config, run_id))
+            # Analyze group anomalies
+            for group_config in group_configs:
+                results.extend(analyze_group_anomalies(group_config, run_id))
 
         # Insert all results into the unified data_quality_results table
-        insert_results_into_bigquery(results)
+        if results:
+            insert_results_into_bigquery(results)
 
         end_time = datetime.utcnow()
         record_run_metadata(run_id, start_time, end_time, 'success')

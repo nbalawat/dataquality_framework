@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: CronWorkflow
+metadata:
+  name: data-quality-validation-schedule
+spec:
+  schedule: "0 2 * * *"  # Runs daily at 2 AM
+  timezone: "UTC"
+  concurrencyPolicy: "Forbid"
+  startingDeadlineSeconds: 0
+  workflowSpec:
+    entrypoint: data-quality-validation
+    templates:
+      - name: data-quality-validation
+        inputs:
+          parameters:
+            - name: config-file
+              default: "config.yaml"
+            - name: checks-to-run
+              default: "all"
+        container:
+          image: your_dockerhub_username/data-quality-validator:latest
+          command: [python]
+          args:
+            - "main.py"
+            - "--config"
+            - "{{inputs.parameters.config-file}}"
+            - "--checks"
+            - "{{inputs.parameters.checks-to-run}}"
+          env:
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: "/var/secrets/google/service-account.json"
+          volumeMounts:
+            - name: google-cloud-key
+              mountPath: /var/secrets/google
+        volumes:
+          - name: google-cloud-key
+            secret:
+              secretName: google-cloud-key
