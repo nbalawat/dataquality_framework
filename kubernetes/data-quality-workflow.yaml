@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  name: data-quality-validation
+spec:
+  entrypoint: data-quality-validation
+  templates:
+    - name: data-quality-validation
+      inputs:
+        parameters:
+          - name: config-file
+            default: "/app/config.yaml"
+          - name: checks-to-run
+            default: "all"
+      container:
+        image: your_dockerhub_username/data-quality-validator:latest
+        command: [python]
+        args:
+          - "main.py"
+          - "--config"
+          - "{{inputs.parameters.config-file}}"
+          - "--checks"
+          - "{{inputs.parameters.checks-to-run}}"
+        env:
+          - name: GOOGLE_APPLICATION_CREDENTIALS
+            value: "/var/secrets/google/service-account.json"
+        volumeMounts:
+          - name: google-cloud-key
+            mountPath: /var/secrets/google
+          - name: config-volume
+            mountPath: /app/config.yaml
+            subPath: config.yaml
+      volumes:
+        - name: google-cloud-key
+          secret:
+            secretName: google-cloud-key
+        - name: config-volume
+          configMap:
+            name: data-quality-config
