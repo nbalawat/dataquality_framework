@@ -1,0 +1,180 @@
+Business Friendly Name,Description,Original Field Name
+Accrued Funding Factor,"The value representing accrued funding for a specific instrument on a given business date, precise to seven decimal places.",
+Business Date,The date when the funding values apply for a specific instrument or financial event.,
+Daily Funding Contribution,"The daily addition to the total accrued funding value, shown to seven decimal places.",
+Days to Maturity,"The number of days remaining until the maturity date of the instrument, counted from the current settlement date.",
+Financing Days Count,The number of calendar days between the current business day and the final settlement date of the instrument.,
+Funding Status,Indicates whether the provided funding values for a specific date are preliminary or final.,
+Interest Rate,The interest rate applicable to the instrument for the specific business date.,
+Interest Rate Index,The underlying index on which the interest rate of the instrument is based.,
+All or None Indicator,Identifies whether the instrument operates under an 'All or None' condition for trading.,
+Allocation Deadline,"The cutoff time for allocation decisions for specific instruments, such as LCH German Special products.",
+Asset Class,"The general category or class of underlying assets for the financial product (e.g., equities, bonds).",
+Asset Sector,"The specific sector associated with a product, applicable especially for combo or synthetic products.",
+Asset Sub-Class,"A more granular classification within the asset class, such as credit or foreign exchange.",
+Assignment Method,"The method used for assigning futures upon the delivery of options, typically either Random or Pro-Rata.",
+Base Index Name,The name of the underlying index used for pricing or benchmarking the product.,
+Block Trade Eligibility,Specifies whether a product is eligible for block trading.,
+ClearPort Eligibility,Indicates whether the product can be traded via the CME ClearPort system.,
+Notional Amount,The total nominal or face amount of the contract for financial products like futures or options.,
+Contract Period,"The period of the contract, typically expressed in monthly or quarterly formats.",
+Coupon Frequency,Describes how often coupon payments occur for a bond or loan.,
+Coupon Rate,The fixed interest rate at which periodic payments are made for a bond or loan.,
+CUSIP Identifier,"A unique identifier used for US and Canadian securities, helpful for identifying specific financial instruments.",
+Debt Maturity Date,"The date on which a debt security, such as a bond, reaches maturity and the principal is repaid.",
+Exercise Method,Specifies the method by which options can be exercised.,
+Final Settlement Date,The final date on which a financial product is settled.,
+Instrument Name,The human-readable name used to describe the financial instrument.,
+ISIN Identifier,The International Securities Identification Number used for identifying securities across international markets.,
+Issuer Country,"The country in which the issuer of the financial instrument is domiciled, typically represented by a two-character ISO code.",
+Last Trade Date,The last possible date that the instrument can be traded across all venues.,
+Market Identifier Code (MIC),"A unique code that identifies exchanges where financial products are traded, often used for reporting.",
+Coupon Type,"Describes the type of interest payment for the instrument, such as fixed or variable.",
+Dated Date,"The date at which interest begins to accrue, typically aligning with the issue date.",
+Debt Security Maturity Date,The final date when the debt security reaches maturity and repayment of the principal is made.,
+Derived Block Trade Eligibility,Indicates if the product is eligible for block trading on derived instruments.,
+Dirty Price Tick,"Specifies the tick value used for dirty price, which includes accrued interest.",
+Dynamic Option Series Indicator,Indicates if the option series supports dynamic strike creation.,
+Exchange Identifier,A unique identifier for the exchange on which the product is traded.,
+Exercise Style,"Specifies the style of options exercise, such as European or American.",
+First Coupon Date,The date of the first coupon payment for a debt instrument.,
+First Delivery Date,"The first date a product can be delivered, particularly for physically settled instruments.",
+First Notice Date,The first date when users will be notified of delivery assignment for an instrument.,
+First Position Date,The first date on which a position can be held for deliverable contracts.,
+First Trade Date,The first date that an instrument is tradable.,
+Financial Instrument Short Name,"A short name for the financial instrument, typically used for regulatory reporting.",
+Fixing Source,"The source of the fixing rate, such as WM Reuters or Bloomberg BFIX.",
+Fixing Time Zone,The time zone associated with the fixing rate source.,
+Floating Rate Offset,"The floating rate offset applied to a reference rate, such as the US T-Bill.",
+Floor Eligibility Indicator,Indicates whether the product is eligible for floor trading.,
+GC Basket Identifier,The unique identifier for a basket of collateral in the GC Repo market.,
+Globex Eligibility Indicator,Specifies whether the product is eligible for trading on the Globex platform.,
+Interest Payment Convention,"The convention used to calculate interest payments, such as ACT/360 or 30/360.",
+Last Delivery Date,The last possible date for delivery of the underlying product.,
+Market Segment ID,The market segment on which the product is traded on the Globex platform.,
+Mass Quote Eligibility,Indicates whether the product is eligible for mass quoting on the Globex platform.,
+Minimum Order Quantity,The minimum quantity required for an order.,
+Notional Amount Per Contract,The notional amount represented by one contract.,
+Option Strike Price,The strike price for an option contract.,
+Position Removal Date,The final date when a position must be removed for deliverable contracts.,
+Settlement Date,The final date on which settlement occurs for a financial instrument.,
+Strike Price Currency,The currency in which the option strike price is denominated.,
+Trading Cut-off Time,The final time when trading can occur for a product.,
+Zero Price Eligibility Indicator,Indicates whether an instrument is eligible to trade at a price of zero.,
+Workup Private Timer,The duration in seconds for the private phase of a workup session.,
+Workup Public Timer,The duration in seconds for the public phase of a workup session.,
+Workup Public Timer Extension,"The extension duration for the public phase of a workup, if needed.",
+Variable Tick Index,An indicator used to specify the variable tick table for pricing.,
+Variable Quantity Indicator,Indicates if the product is subject to variable quantity processing.,
+Valuation Method,"The type of valuation method applied, such as futures style or premium style.",
+Unit of Measure,"The unit of measure for the product, such as barrels or tons.",
+Transaction Size Multiplier,Multiplier used for calculating the transaction size.,
+Trade Tick,Specifies the tick used for trading the instrument's price.,
+Total Notional Amount Per Contract,The total notional value per contract for the product.,
+Termination Date,The date on which the options series terminates.,
+Swap Start Date,The start date of a swap contract.,
+Strike Price Interval,The interval between option strike prices.,
+Settlement Method,Specifies whether the product settles financially or physically.,
+Settlement Location,The geographical location where the settlement takes place.,
+Settlement Date,The final date when settlement occurs for a trade or contract.,
+Repo Term Identifier,The identifier for the term of a repo agreement.,
+Pricing Convention,The convention used to calculate spread pricing.,
+Price Multiplier,The multiplier applied to the product price to convert it to economic value.,
+Price Discretionary Offset,The maximum discretionary offset allowed from the limit order price.,
+Price Currency,The currency used for quoting the trade price.,
+Position Removal Date,The date when a position is required to be removed from the system.,
+Peak Type,Specifies the type of peak or off-peak hours for energy contracts.,
+Option Type Indicator,Indicates whether the option is a call or put.,
+Notional Contract Size,The contract size before decay begins for decay-eligible instruments.,
+Minimum Incremental Quantity,The minimum order quantity required for an incremental order.,
+Market Data Channel Identifier,Identifier for the market data feed channel on the Globex platform.,
+Instrument Symbol,The symbol used for identifying the instrument.,
+Interest Rate Convention,"The convention used to calculate interest payments, such as 30/360.",
+Interest Rate Index,The index on which the interest rate is based.,
+Initial Order Size,The minimum initial order size for a product.,
+Commodity Standards,The standards for commodities in physically-delivered contracts.,
+Contract Notional Amount,The notional value per contract for financial products like futures.,
+Contrary Instruction Indicator,Indicates whether contrary instructions are allowed for the instrument.,
+Coupon Day Count Convention,"Specifies the day count convention used for accruing interest (e.g., ACT/ACT, 30/360).",
+Coupon Frequency Period,The number of coupon periods in a year for a bond or loan.,
+Coupon Frequency Unit,"How frequently coupon payments are made (e.g., annually, semi-annually).",
+Coupon Rate,The fixed interest rate for the bond or loan.,
+CUSIP Identifier,A unique identifier for US and Canadian registered securities.,
+Daily Indicator,Indicates whether the instrument is classified as a daily product.,
+Debt Security Maturity Date,The maturity date of a debt security when the principal is due.,
+Derived Block Eligibility,Indicates if the product is eligible for block trading in derived markets.,
+Dirty Price Rounding,Specifies the type of rounding used for dirty price calculation.,
+Dirty Price Tick,The tick size used for pricing with accrued interest included (dirty price).,
+Dynamic Strike Indicator,Indicates if the option series supports dynamic strike creation.,
+EFIX Instrument Indicator,Indicates whether the instrument is traded on the eFix matching service.,
+EFIX Product Indicator,Indicates if the product is traded on the eFix matching service.,
+EFP Eligibility Indicator,Indicates whether the product is eligible for EFP (Exchange for Physicals) transactions.,
+EFR Eligibility Indicator,Indicates if the product is eligible for EFR (Exchange for Risk) transactions.,
+End Date,The end date for a repo transaction.,
+Exchange Identifier,The exchange identifier used in post-trade applications.,
+Exercise Method,"The method by which an option can be exercised (e.g., American or European).",
+Exercise Style,"Specifies the exercise style of options, such as American or European.",
+First Coupon Date,The first date on which a coupon payment is made for a bond.,
+First Delivery Date,The first date on which physical delivery can be made for a contract.,
+First Notice Date,The first date on which a notice of delivery is given.,
+First Position Date,The first date on which a position is accepted for a deliverable contract.,
+First Trade Date,The first date on which the instrument can be traded.,
+Financial Instrument Short Name (FISN),A short name used for the financial instrument in regulatory reporting.,
+Fixing Name,"The name of the source for the fixing rate, such as WM Reuters.",
+Fixing Source,"The source of the fixing rate, such as WM Reuters or Bloomberg.",
+Fixing Time Zone,The time zone associated with the fixing source.,
+Floor Call Symbol,The product code for the call instrument traded on the floor.,
+Floor Eligibility Indicator,Indicates whether the product is eligible for floor trading.,
+Floor Put Symbol,The product code for the put instrument traded on the floor.,
+Fractional Price Main,Specifies the main denominator for fractional pricing.,
+Fractional Price Sub,Specifies the sub denominator for fractional pricing.,
+Globex Book Depth,The market data book depth on the Globex platform.,
+GC Basket Identifier,"The identifier for the repo basket (e.g., CUSIP or ISIN).",
+Globex Eligibility Indicator,Indicates whether the product is eligible for trading on the Globex platform.,
+Globex Security ID,A unique identifier for each instrument traded on Globex.,
+Globex Selection Date,The date when an option series is added to Globex for trading.,
+Globex Group ID,A group identifier used by Globex to categorize products.,
+Globex Minimum Quantity,Specifies the minimum order or quote size on the Globex platform.,
+Commodity Standards,The standards for commodities in physically-delivered contracts.,commodity_standards
+Contract Notional Amount,The notional value per contract for financial products like futures.,contract_notional_amt
+Contrary Instruction Indicator,Indicates whether contrary instructions are allowed for the instrument.,contrary_instruction_ind
+Coupon Day Count Convention,"Specifies the day count convention used for accruing interest (e.g., ACT/ACT, 30/360).",coupon_day_count
+Coupon Frequency Period,The number of coupon periods in a year for a bond or loan.,coupon_freq_period
+Coupon Frequency Unit,"How frequently coupon payments are made (e.g., annually, semi-annually).",coupon_freq_unit
+Coupon Rate,The fixed interest rate for the bond or loan.,coupon_rate
+CUSIP Identifier,A unique identifier for US and Canadian registered securities.,cusip
+Daily Indicator,Indicates whether the instrument is classified as a daily product.,daily_ind
+Debt Security Maturity Date,The maturity date of a debt security when the principal is due.,debt_security_maturity_date
+Derived Block Eligibility,Indicates if the product is eligible for block trading in derived markets.,derived_block_elig_ind
+Dirty Price Rounding,Specifies the type of rounding used for dirty price calculation.,dirty_px_rounding
+Dirty Price Tick,The tick size used for pricing with accrued interest included (dirty price).,dirty_px_tick
+Dynamic Strike Indicator,Indicates if the option series supports dynamic strike creation.,dynamic_ind
+EFIX Instrument Indicator,Indicates whether the instrument is traded on the eFix matching service.,efix_instr_ind
+EFIX Product Indicator,Indicates if the product is traded on the eFix matching service.,efix_prod_ind
+EFP Eligibility Indicator,Indicates whether the product is eligible for EFP (Exchange for Physicals) transactions.,efp_elig_ind
+EFR Eligibility Indicator,Indicates if the product is eligible for EFR (Exchange for Risk) transactions.,efr_elig_ind
+End Date,The end date for a repo transaction.,end_date
+Exchange Identifier,The exchange identifier used in post-trade applications.,exch_id
+Exercise Method,"The method by which an option can be exercised (e.g., American or European).",exercise_mthd
+Exercise Style,"Specifies the exercise style of options, such as American or European.",exercise_style
+First Coupon Date,The first date on which a coupon payment is made for a bond.,first_coupon_date
+First Delivery Date,The first date on which physical delivery can be made for a contract.,first_delivery_date
+First Notice Date,The first date on which a notice of delivery is given.,first_notice_date
+First Position Date,The first date on which a position is accepted for a deliverable contract.,first_position_date
+First Trade Date,The first date on which the instrument can be traded.,first_trade_date
+Financial Instrument Short Name (FISN),A short name used for the financial instrument in regulatory reporting.,fisn
+Fixing Name,"The name of the source for the fixing rate, such as WM Reuters.",fixing_name
+Fixing Source,"The source of the fixing rate, such as WM Reuters or Bloomberg.",fixing_src
+Fixing Time Zone,The time zone associated with the fixing source.,fixing_time_zone
+Floor Call Symbol,The product code for the call instrument traded on the floor.,floor_call_sym
+Floor Eligibility Indicator,Indicates whether the product is eligible for floor trading.,floor_elig_ind
+Floor Put Symbol,The product code for the put instrument traded on the floor.,floor_put_sym
+Fractional Price Main,Specifies the main denominator for fractional pricing.,frac_px_main
+Fractional Price Sub,Specifies the sub denominator for fractional pricing.,frax_px_sub
+Globex Book Depth,The market data book depth on the Globex platform.,gbx_book_depth
+GC Basket Identifier,"The identifier for the repo basket (e.g., CUSIP or ISIN).",gc_basket_identifier
+Globex Eligibility Indicator,Indicates whether the product is eligible for trading on the Globex platform.,glbx_elig_ind
+Globex Security ID,A unique identifier for each instrument traded on Globex.,glbx_security_id
+Globex Selection Date,The date when an option series is added to Globex for trading.,glbx_selection_date
+Globex Group ID,A group identifier used by Globex to categorize products.,glbx_group_id
+Globex Minimum Quantity,Specifies the minimum order or quote size on the Globex platform.,glbx_ord_min_qty
